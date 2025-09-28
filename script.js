@@ -78,3 +78,40 @@ nav.querySelectorAll('a, .book-btn').forEach(el => {
     burger.setAttribute('aria-expanded','false');
   });
 });
+
+// === Smooth scroll con offset del header + cierre de menú móvil ===
+(function(){
+  const header = document.querySelector('.site-header');
+
+  // Calcula la altura actual del header (por si cambia en responsive)
+  const headerOffset = () => (header ? header.getBoundingClientRect().height : 0);
+
+  // Escucha todos los enlaces internos con #
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      e.preventDefault();
+
+      const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset() - 8;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+
+      // Cierra el menú móvil si está abierto
+      if (header.classList.contains('is-open')) {
+        header.classList.remove('is-open');
+        const burger = header.querySelector('.hamburger');
+        burger?.setAttribute('aria-expanded','false');
+      }
+    });
+  });
+
+  // (Opcional) actualiza una CSS var con la altura del header para usar en CSS
+  document.documentElement.style.setProperty('--header-h', headerOffset() + 'px');
+  window.addEventListener('resize', () => {
+    document.documentElement.style.setProperty('--header-h', headerOffset() + 'px');
+  });
+})();
