@@ -181,3 +181,82 @@ nav a:hover{color:#fff}
   /* si quieres un glow muy sutil: */
   filter: drop-shadow(0 0 4px rgba(110,231,255,.25));
 }
+
+/* Layout básico del header (desktop) */
+.site-header .container.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px;
+}
+.site-header nav{
+  display:flex; align-items:center; gap:24px;
+}
+.book-btn{
+  background:#0ea5e9; color:#fff; border:0; padding:8px 16px;
+  border-radius:20px; font-weight:600; cursor:pointer; transition:.25s;
+}
+.book-btn:hover{ transform:translateY(-1px); }
+
+/* Hamburguesa (oculta en desktop) */
+.hamburger{ display:none; position:relative; width:36px; height:36px;
+  border:0; background:transparent; cursor:pointer;
+}
+.hamburger span{
+  position:absolute; left:8px; right:8px; height:2px; background:#fff;
+  transition:.25s;
+}
+.hamburger span:nth-child(1){ top:11px; }
+.hamburger span:nth-child(2){ top:17px; }
+.hamburger span:nth-child(3){ top:23px; }
+
+/* MÓVIL */
+@media (max-width: 900px){
+  /* muestra hamburguesa, oculta nav por defecto */
+  .hamburger{ display:block; }
+  .site-header nav{
+    position:absolute; top:100%; left:0; right:0;
+    display:none; flex-direction:column; gap:12px;
+    padding:14px 16px; background:#0b0f14; border-top:1px solid #1f2937;
+  }
+  .site-header nav a,
+  .site-header .book-btn{ width:100%; text-align:left; }
+  .site-header .book-btn{ text-align:center; }
+
+  /* cuando abrimos el menú */
+  .site-header.is-open nav{ display:flex; }
+
+  /* animación hamburguesa -> “X” */
+  .site-header.is-open .hamburger span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .site-header.is-open .hamburger span:nth-child(2){ opacity:0; }
+  .site-header.is-open .hamburger span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+}
+
+/* === FORZAR TIPOGRAFÍA BLANCA EN EL MODAL DE BOOKING === */
+.modal-content,
+.modal-content * {
+  color: #fff !important;
+}
+
+/* placeholders blancos */
+.modal-content ::placeholder {
+  color: #fff !important;
+  opacity: 0.9; /* legible */
+}
+
+/* opciones de selects en los desplegables */
+.modal-content select,
+.modal-content option {
+  color: #fff !important;
+  background: #0a1220; /* mismo fondo que tienes */
+}
+
+/* texto del botón de confirmación */
+.modal-content .btn,
+.modal-content button {
+  color: #fff !important;
+}
+
+/* microcopy debajo del botón */
+.modal-content + .microcopy,
+.modal .microcopy {
+  color: #fff !important;
+}

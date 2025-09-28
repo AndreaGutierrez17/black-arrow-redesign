@@ -93,3 +93,23 @@ form?.addEventListener('submit', (e) => {
   // tu lógica de generar .ics aquí...
   bookModal.close(); // 👈 esto lo cierra
 });
+
+(function(){
+    const header = document.querySelector('.site-header');
+    const btn = header.querySelector('.hamburger');
+
+    btn.addEventListener('click', () => {
+      const open = header.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Cerrar al hacer click en un enlace del menú (móvil)
+    header.querySelectorAll('nav a, nav .book-btn').forEach(el=>{
+      el.addEventListener('click', ()=> {
+        if (header.classList.contains('is-open')) {
+          header.classList.remove('is-open');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+  })();
