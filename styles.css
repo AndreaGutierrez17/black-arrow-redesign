@@ -108,3 +108,76 @@ nav a:hover{color:#fff}
   padding:1rem;
   border-top:1px solid rgba(255,255,255,.1);
 }
+
+/* === Ajustes de tarjetas (uniformes y responsive) === */
+
+/* 1) Grid más flexible: columnas auto-fit y alturas iguales */
+.grid.cards{
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;            /* estira las tarjetas a igual altura */
+}
+
+/* 2) Tarjeta: columna, ocupa toda la altura y con overflow oculto */
+.card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* 3) Imagen consistente: recorte centrado con relación de aspecto fija */
+.card > img{
+  width: 100%;
+  aspect-ratio: 16 / 10;          /* fuerza mismas proporciones */
+  object-fit: cover;               /* recorte elegante */
+  display: block;
+  transition: transform .35s ease; /* micro-zoom en hover */
+}
+
+/* 4) Tipografía y espaciados iguales */
+.card h3{
+  margin: .9rem 1rem .25rem;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+.card p{
+  margin: 0 1rem 1rem;
+  color: var(--muted);
+}
+
+/* 5) Hover sutil y consistente */
+.card:hover > img{
+  transform: scale(1.03);
+}
+
+/* 6) Ajuste fino en desktop: un poco más alto el área de imagen */
+@media (min-width: 900px){
+  .card > img{
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ===== Iconos elegantes para la lista .checks ===== */
+.checks{
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.checks li{
+  display: flex;
+  gap: .6rem;
+  align-items: flex-start;
+  margin: .45rem 0;
+}
+.checks li::before{
+  content: "";
+  flex: 0 0 1.15rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: .2rem;
+  background: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236ee7ff%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M22 11.08V12a10 10 0 1 1-5.93-9.14%22/><polyline points=%2222 4 12 14.01 9 11.01%22/></svg>') no-repeat center / contain;
+  /* si quieres un glow muy sutil: */
+  filter: drop-shadow(0 0 4px rgba(110,231,255,.25));
+}

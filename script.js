@@ -82,3 +82,14 @@ mobileMenu.querySelectorAll('a').forEach(a =>
     hamburger.setAttribute('aria-expanded','false');
   })
 );
+
+// Botón "X" para cerrar
+document.querySelector('#bookModal .close')
+  ?.addEventListener('click', () => bookModal.close());
+
+// Cerrar automáticamente al confirmar (submit)
+form?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  // tu lógica de generar .ics aquí...
+  bookModal.close(); // 👈 esto lo cierra
+});
