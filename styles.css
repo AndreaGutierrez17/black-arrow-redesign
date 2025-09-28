@@ -260,3 +260,19 @@ nav a:hover{color:#fff}
 .modal .microcopy {
   color: #fff !important;
 }
+
+/* Menú oculto por defecto en móvil */
+@media (max-width: 900px){
+  .site-header nav{
+    display:none;
+    flex-direction:column;
+    gap:12px;
+    padding:14px 16px;
+    background:#0b0f14;
+    border-top:1px solid #1f2937;
+  }
+  /* Mostrar cuando el header tiene la clase is-open */
+  .site-header.is-open nav{ 
+    display:flex; 
+  }
+}

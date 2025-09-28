@@ -113,3 +113,21 @@ form?.addEventListener('submit', (e) => {
       });
     });
   })();
+
+ const header = document.querySelector('.site-header');
+const burger = header.querySelector('.hamburger');
+const nav = header.querySelector('nav');
+
+// Abrir / cerrar menú al hacer click en hamburguesa
+burger.addEventListener('click', () => {
+  header.classList.toggle('is-open');
+  burger.setAttribute('aria-expanded', header.classList.contains('is-open'));
+});
+
+// Cerrar el menú al hacer click en cualquier link
+nav.querySelectorAll('a, .book-btn').forEach(el => {
+  el.addEventListener('click', () => {
+    header.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false');
+  });
+});
