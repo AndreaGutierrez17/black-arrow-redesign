@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Black Arrow Group</title>
+  <meta name="description" content="About Black Arrow Group leadership, mission, and workforce strategy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="about-page">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img class="brand-logo" src="img/black_arrow_white_logo.png" alt="Black Arrow Group logo" />
+        <span>Black Arrow Group</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#approach">Approach</a>
+        <a href="about.html">Leadership</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="resources.html">Resources</a>
+        <a href="https://blackarrowquiver.substack.com/embed" target="_blank" rel="noopener" class="subscribe-nav">Subscribe</a>
+        <button class="btn book-btn" data-open-book>Book</button>
+      </nav>
+      <button class="hamburger" aria-label="Open Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section about-hero">
+      <div class="container about-wrap">
+        <h1>About Us</h1>
+        <p class="about-lead">We help organizations turn workforce strategy into measurable impact through practical execution, trusted partnerships, and long-term thinking.</p>
+      </div>
+    </section>
+
+    <section class="section about-feature">
+      <div class="container about-two-col">
+        <a class="about-video-card about-video-link" href="https://www.youtube.com/watch?v=5APy_j-Sl20&t=12s" target="_blank" rel="noopener" aria-label="Watch video on YouTube">
+          <img src="https://img.youtube.com/vi/5APy_j-Sl20/maxresdefault.jpg" alt="Workforce Development with Bryant Black video cover" loading="lazy">
+          <span class="video-play">&#9658;</span>
+          <span class="video-caption">Watch on YouTube</span>
+        </a>
+        <div class="about-summary">
+          <h2>Leadership in Action</h2>
+          <p>Black Arrow Group works alongside industry leaders, educational institutions, and community organizations to design workforce solutions that create sustainable growth.</p>
+          <p>Our mission is to bridge the gap between talent and opportunity, helping companies build resilient teams in a rapidly evolving economy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container about-copy">
+        <p><strong>At Black Arrow Group</strong>, we believe strong partnerships and strategic planning are the foundation of sustainable growth. For years, we have worked alongside industry leaders, educational institutions, and organizations to develop innovative solutions that strengthen the workforce and drive meaningful impact.</p>
+        <p>We do not offer one-size-fits-all strategies. Instead, we collaborate closely with each partner to understand unique challenges and design tailored roadmaps that deliver measurable results, from operational diagnostics to long-term strategic frameworks.</p>
+        <p>Whether you are looking to jumpstart a project, refresh your hiring practices, or build new relationships across education and training partners, we help shape a practical plan to move toward tomorrow's talent, today.</p>
+      </div>
+    </section>
+
+    <section class="section about-carousel-section">
+      <div class="container">
+        <div class="about-carousel" data-carousel>
+          <button class="carousel-btn prev" type="button" data-prev aria-label="Previous photo">&#10094;</button>
+          <div class="carousel-track" data-track>
+            <img src="img/about-slide-1.jpg" alt="Bryant speaking at industry panel" class="active" />
+            <img src="img/about-slide-2.jpg" alt="Bryant with workforce partners" />
+            <img src="img/about-slide-3.jpg" alt="Bryant presenting strategy session" />
+            <img src="img/about-slide-4.jpg" alt="Black Arrow team event" />
+          </div>
+          <button class="carousel-btn next" type="button" data-next aria-label="Next photo">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-cta">
+      <div class="container center">
+        <h2>Ready to build the workforce of tomorrow?</h2>
+        <a class="btn ghost" href="index.html#contact">Contact Us</a>
+        <a class="btn subscribe-btn" href="https://blackarrowquiver.substack.com/embed" target="_blank" rel="noopener">Subscribe</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand small"><img class="brand-logo" src="img/black_arrow_white_logo.png" alt="Black Arrow Group logo" /> Black Arrow Group</div>
+        <p>&copy; <span id="year"></span> Black Arrow Group. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#approach">Approach</a>
+        <a href="about.html">Leadership</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="resources.html">Resources</a>
+        <a href="https://blackarrowquiver.substack.com/embed" target="_blank" rel="noopener">Subscribe</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/17132641550?text=Hi%20Black%20Arrow%20Group%2C%20I%27d%20like%20to%20book%20a%20session" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><span class="wa-icon" aria-hidden="true"></span></a>
+
+  <dialog id="bookModal" class="modal">
+    <form method="dialog" class="modal-content" id="bookingForm">
+      <button class="close" aria-label="Close" value="cancel">x</button>
+      <h3>Book a Session</h3>
+      <label>Name<input type="text" name="name" required /></label>
+      <label>Email<input type="email" name="email" required /></label>
+      <label>Service
+        <select name="service" required>
+          <option value="Initial Consult">Initial Consult (Free - 60 min)</option>
+          <option value="Problem-Solving Session">Problem-Solving Session ($500 - 2 hrs)</option>
+          <option value="Strategic Planning Sprint">Strategic Planning Sprint ($2,000 - 4 hrs)</option>
+        </select>
+      </label>
+      <label>Date & Time<input type="datetime-local" name="datetime" required /></label>
+      <label>Notes (optional)<textarea name="notes" rows="3" placeholder="What challenge are you tackling?"></textarea></label>
+      <button class="btn primary" value="confirm">Confirm Booking</button>
+      <p class="microcopy">A calendar invite will be generated locally for your confirmation.</p>
+      <p class="microcopy">Prefer updates? <a href="https://blackarrowquiver.substack.com/embed" target="_blank" rel="noopener">Subscribe here</a>.</p>
+    </form>
+  </dialog>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
